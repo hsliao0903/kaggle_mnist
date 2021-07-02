@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import seaborn as sns
+# import seaborn as sns
 
 
 np.random.seed(2)
@@ -22,7 +22,7 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau
 
 
 
-sns.set(style='white', context='notebook', palette='deep')
+# sns.set(style='white', context='notebook', palette='deep')
 
 print('\n\nStart of the CNN\n\n')
 
@@ -113,7 +113,7 @@ learning_rate_reduction = ReduceLROnPlateau(monitor='val_accuracy',
                                             min_lr=0.00001)
 
 
-epochs = 1 # Turn epochs to 30 to get 0.9967 accuracy
+epochs = 2 # Turn epochs to 30 to get 0.9967 accuracy
 batch_size = 86
 
 
@@ -156,16 +156,16 @@ history = model.fit(datagen.flow(X_train,Y_train, batch_size=batch_size),
 
 
 # Plot the loss and accuracy curves for training and validation 
-fig, ax = plt.subplots(2,1)
-ax[0].plot(history.history['loss'], color='b', label="Training loss")
-ax[0].plot(history.history['val_loss'], color='r', label="validation loss",axes =ax[0])
-legend = ax[0].legend(loc='best', shadow=True)
-plt.show()
+# fig, ax = plt.subplots(2,1)
+# ax[0].plot(history.history['loss'], color='b', label="Training loss")
+# ax[0].plot(history.history['val_loss'], color='r', label="validation loss",axes =ax[0])
+# legend = ax[0].legend(loc='best', shadow=True)
+# plt.show()
 
-ax[1].plot(history.history['accuracy'], color='b', label="Training accuracy")
-ax[1].plot(history.history['val_accuracy'], color='r',label="Validation accuracy")
-legend = ax[1].legend(loc='best', shadow=True)
-plt.show()
+# ax[1].plot(history.history['accuracy'], color='b', label="Training accuracy")
+# ax[1].plot(history.history['val_accuracy'], color='r',label="Validation accuracy")
+# legend = ax[1].legend(loc='best', shadow=True)
+# plt.show()
 
 
 
